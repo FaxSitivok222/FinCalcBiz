@@ -1,0 +1,78 @@
+html
+CopyEdit
+<!-- Сайт розроблено студентом Войтіком Олегом, група ФІТ4-1 -->
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Калькулятор — FinCalcBiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FinCalcBiz</div>
+      <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="calculator.html">Калькулятор</a>
+        <a href="about.html">Про сервіс</a>
+        <a href="contacts.html">Контакти</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="calc-section">
+      <h1>Калькулятор кредиту</h1>
+      <form id="loan-form" class="calc-form" onsubmit="return false;">
+        <label>Сума кредиту (₴)
+          <input type="number" id="amount" step="0.01" min="0" required placeholder="Наприклад, 100000">
+        </label>
+
+        <label>Річна ставка (%)
+          <input type="number" id="rate" step="0.01" min="0" required placeholder="Наприклад, 12">
+        </label>
+
+        <label>Термін (місяців)
+          <input type="number" id="months" min="1" required placeholder="Наприклад, 36">
+        </label>
+
+        <label>Комісія (фіксована, ₴) — опціонально
+          <input type="number" id="commission" step="0.01" min="0" placeholder="Наприклад, 1000">
+        </label>
+
+        <label>Податок на комісію (%)
+          <input type="number" id="taxPercent" step="0.01" min="0" placeholder="Наприклад, 20">
+        </label>
+
+        <div class="actions">
+          <button class="btn" id="calcBtn">Розрахувати</button>
+          <button class="btn btn-ghost" id="clearBtn" type="button">Очистити</button>
+        </div>
+      </form>
+
+      <div id="results" class="results hidden">
+        <h2>Результат</h2>
+        <p>Щомісячний платіж: <strong id="monthly">—</strong></p>
+        <p>Загальна переплата (усі витрати): <strong id="overpay">—</strong></p>
+        <p>Загальна сума до виплати: <strong id="totalPay">—</strong></p>
+      </div>
+
+      <div class="note">
+        <strong>Примітка:</strong> Формула використовує ануїтетний розрахунок (щомісячні рівні платежі). Комісія вважається одноразовим внеском, який додається до загальної суми кредиту перед розрахунком платежу. Податок застосовується до комісії.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>FinCalcBiz — Войтіков Олег © 2025</div>
+      <div>Войтіков Олег дмитрович группа 4-1</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
